@@ -24,6 +24,11 @@ knife
   Knife client delete <client-name> -y 
   #To delete chef role
   Knife role delete <role-name>  -y 
+  #Now upload the role on chef-server 
+  knife role from file/devops.rb 
+  #To check role store in chef server 
+  knife role list 
+  
 
 #3 Runs Chef in a standalone mode without a Chef server, useful for testing or simple deployments.
 #The chef-solo command is used to run Chef in a standalone mode without a Chef server. It is typically used for simple deployments, testing, or when you don't have a Chef server available.
