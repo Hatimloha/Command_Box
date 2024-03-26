@@ -72,14 +72,17 @@ Readme md
 
 #14 Here we write code 
 Recipe
+  #Command for create a recipe
   Chef generate recipe <recipe name>
 
 #15 Create cookbook for store recipe
 cookbook
+  #Command for create a cookbook
   Chef generate cookbook <cookbook name>
 
 #16 unit testing 
 Spec 
+  #If you want to test a small part of script(unit)  
   Chef spec ruby –c  test-cookbook/recipe/test-recipe.rb 
 
 #17 integration testing (entire) 
