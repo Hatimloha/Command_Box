@@ -5,43 +5,61 @@ chef-client
   chef-client –zr "recipe[apache-cookbook::recipe3]"
   #multiple recipe exicute
   chef-client –zr "recipe[test-cookbook::default], recipe[apache-cookbook::default]" 
+
 #The Swiss Army knife of Chef, used for managing nodes, cookbooks, roles, environments, and more
 knife
   #Upload a cookbook
   knife cookbook upload apache-cookbook 
   #Check upload file on sever
   knife cookbook list 
+  #Run list according to sever (only recipe we want to run on particular server will run) 
+  knife node run-list set node1 "recipe[apache-cookbook::apache-recipe]"
+
 #Runs Chef in a standalone mode without a Chef server, useful for testing or simple deployments.
 chef-solo
+
 #Interactive shell for exploring the Chef server API and testing recipes.
 chef-shell
+
 #Applies a single recipe from the command line without a Chef server.
 chef-apply
+
 #Manages encrypted data bags using keys from a key/value store.
 chef-vault
+
 #Controls the Chef server, including starting, stopping, reconfiguring, and managing services.
 chef-server-ctl
+
 #Bootstraps a new node to be managed by Chef.
 knife bootstrap
+
 #This cmd is used to ignore recipe which we don’t want to commit same as "gitignore"
 chefignore
+
 #Testing cookbook is proper or not without deploying on live server "demo run".
 Kitchen.yml
+
 #Information like name, version, author etc of cookbook
 Metadata rb 
+
 #Use this for opening existing file for changes 
 .Rb
+
 #Information about usage of cookbook 
 Readme md
+
 #Here we write code 
 Recipe
   Chef generate recipe <recipe name>
+
 #Create cookbook for store recipe
 cookbook
   Chef generate cookbook <cookbook name>
+
 #unit testing 
 Spec 
   Chef spec ruby –c  test-cookbook/recipe/test-recipe.rb 
+
 #integration testing (entire) 
 Test
 
