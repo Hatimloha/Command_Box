@@ -1,12 +1,12 @@
 #Chef-Commands
-#Runs the Chef client, which applies the configuration to the node.
+#1 Runs the Chef client, which applies the configuration to the node.
 chef-client
   #single recipe exicute
   chef-client –zr "recipe[apache-cookbook::recipe3]"
   #multiple recipe exicute
   chef-client –zr "recipe[test-cookbook::default], recipe[apache-cookbook::default]" 
 
-#The Swiss Army knife of Chef, used for managing nodes, cookbooks, roles, environments, and more
+#2 The Swiss Army knife of Chef, used for managing nodes, cookbooks, roles, environments, and more
 knife
   #Upload a cookbook
   knife cookbook upload apache-cookbook 
@@ -15,52 +15,52 @@ knife
   #Run list according to sever (only recipe we want to run on particular server will run) 
   knife node run-list set node1 "recipe[apache-cookbook::apache-recipe]"
 
-#Runs Chef in a standalone mode without a Chef server, useful for testing or simple deployments.
+#3 Runs Chef in a standalone mode without a Chef server, useful for testing or simple deployments.
 chef-solo
 
-#Interactive shell for exploring the Chef server API and testing recipes.
+#4 Interactive shell for exploring the Chef server API and testing recipes.
 chef-shell
 
-#Applies a single recipe from the command line without a Chef server.
+#5 Applies a single recipe from the command line without a Chef server.
 chef-apply
 
-#Manages encrypted data bags using keys from a key/value store.
+#6 Manages encrypted data bags using keys from a key/value store.
 chef-vault
 
-#Controls the Chef server, including starting, stopping, reconfiguring, and managing services.
+#7 Controls the Chef server, including starting, stopping, reconfiguring, and managing services.
 chef-server-ctl
 
-#Bootstraps a new node to be managed by Chef.
+#8 Bootstraps a new node to be managed by Chef.
 knife bootstrap
 
-#This cmd is used to ignore recipe which we don’t want to commit same as "gitignore"
+#9 This cmd is used to ignore recipe which we don’t want to commit same as "gitignore"
 chefignore
 
-#Testing cookbook is proper or not without deploying on live server "demo run".
+#10 Testing cookbook is proper or not without deploying on live server "demo run".
 Kitchen.yml
 
-#Information like name, version, author etc of cookbook
+#11 Information like name, version, author etc of cookbook
 Metadata rb 
 
-#Use this for opening existing file for changes 
+#12 Use this for opening existing file for changes 
 .Rb
 
-#Information about usage of cookbook 
+#13 Information about usage of cookbook 
 Readme md
 
-#Here we write code 
+#14 Here we write code 
 Recipe
   Chef generate recipe <recipe name>
 
-#Create cookbook for store recipe
+#15 Create cookbook for store recipe
 cookbook
   Chef generate cookbook <cookbook name>
 
-#unit testing 
+#16 unit testing 
 Spec 
   Chef spec ruby –c  test-cookbook/recipe/test-recipe.rb 
 
-#integration testing (entire) 
+#17 integration testing (entire) 
 Test
 
  
