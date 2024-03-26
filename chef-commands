@@ -59,6 +59,8 @@ chef-server-ctl
 
 #8 Bootstraps a new node to be managed by Chef.
 knife bootstrap
+  #bootstrap is use to connect node with server 
+  Knife bootstrap <private-ip> -- ssh-user ec2-user  --sudo -I node-key pem –n node 1
 
 #9 This cmd is used to ignore recipe which we don’t want to commit same as "gitignore"
 chefignore
@@ -92,5 +94,6 @@ Spec
 
 #17 integration testing (entire) 
 Test
+  chef exec ruby -c test-cookbook/recipe/recipe2.rb
 
  
