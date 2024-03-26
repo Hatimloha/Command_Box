@@ -14,18 +14,40 @@ knife
   knife cookbook list 
   #Run list according to sever (only recipe we want to run on particular server will run) 
   knife node run-list set node1 "recipe[apache-cookbook::apache-recipe]"
+  #Use to delete cookbook
+  Knife cookbook delete <cookbook name> -y
+  #To check number Of client node connected to server 
+  Knife node list 
+  #client present on node which are connected to server 
+  Knife client-list
+  #To delete connected client to server
+  Knife client delete <client-name> -y 
+  #To delete chef role
+  Knife role delete <role-name>  -y 
 
 #3 Runs Chef in a standalone mode without a Chef server, useful for testing or simple deployments.
+#The chef-solo command is used to run Chef in a standalone mode without a Chef server. It is typically used for simple deployments, testing, or when you don't have a Chef server available.
 chef-solo
+  sudo chef-solo -c solo.rb -j solo.json
 
 #4 Interactive shell for exploring the Chef server API and testing recipes.
 chef-shell
 
 #5 Applies a single recipe from the command line without a Chef server.
 chef-apply
+  #only use when we dont have chef server
+  chef-apply my_recipe.rb
 
 #6 Manages encrypted data bags using keys from a key/value store.
 chef-vault
+  #Create a voult and add file
+  chef-vault create my_vault my_item --json '{"username": "admin", "password": "s3cr3t"}'
+  #To add existing file in vault 
+  chef-vault update my_vault my_item --json '{"username": "new_admin", "password": "new_s3cr3t"}'
+  #To check file inside a vault
+  chef-vault show my_vault my_item
+  #To delete a file from vault
+  chef-vault delete my_vault my_item
 
 #7 Controls the Chef server, including starting, stopping, reconfiguring, and managing services.
 chef-server-ctl
