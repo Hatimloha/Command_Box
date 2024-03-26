@@ -1,0 +1,12 @@
+#Install the Chef Server: 
+sudo apt update && sudo apt upgrade
+wget https://packages.chef.io/files/stable/chef-server/15.1.7/ubuntu/20.04/chef-server-core_15.1.7-1_amd64.deb
+sudo dpkg -i chef-server-core_*.deb
+rm chef-server-core_*.deb 
+sudo chef-server-ctl reconfigure
+
+#Configure a Chef User and Organization
+mkdir .chef
+sudo chef-server-ctl user-create USER_NAME FIRST_NAME LAST_NAME EMAIL 'PASSWORD' --filename ~/.chef/USER_NAME.pem
+sudo chef-server-ctl user-list
+
