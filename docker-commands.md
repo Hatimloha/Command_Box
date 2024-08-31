@@ -1,6 +1,6 @@
-# 1 check available images.  
+# 1. check available images.  
 
-```docker
+```python
 Docker images
 ```
 
