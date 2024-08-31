@@ -1,3 +1,108 @@
+# Chef Commands
+
+## 1. Runs the Chef client, which applies the configuration to the node.
+```bash
+chef-client
+```
+- Single recipe execute:
+```bash
+chef-client –zr "recipe[apache-cookbook::recipe3]"
+```
+
+- Multiple recipes execute:
+```bash
+chef-client –zr "recipe[test-cookbook::default], recipe[apache-cookbook::default]"
+```
+
+## 2. The Swiss Army knife of Chef, used for managing nodes, cookbooks, roles, environments, and more.
+```bash
+knife
+```
+- Upload a cookbook:
+```bash
+knife cookbook upload apache-cookbook
+```
+
+- Check uploaded files on server:
+```bash
+knife cookbook list
+```
+- Run list according to server (only recipes we want to run on a particular server will run):
+```bash
+knife node run-list set node1 "recipe[apache-cookbook::apache-recipe]"
+```
+- Delete a cookbook:
+```bash
+knife cookbook delete <cookbook name> -y
+```
+- To check the number of client nodes connected to the server:
+```bash
+knife node list
+```
+- Clients present on nodes that are connected to the server:
+```bash
+knife client list
+```
+- To delete a connected client from the server:
+```bash
+knife role delete <role-name> -y
+```
+- To delete a Chef role:
+```bash
+knife role delete <role-name> -y
+```
+- Upload the role on Chef server:
+```bash
+knife role from file /devops.rb
+```
+- To check roles stored in Chef server:
+```bash
+knife role list
+```
+
+## 3. Runs Chef in a standalone mode without a Chef server, useful for testing or simple deployments.
+```bash
+chef-solo
+```
+- Example usage:
+```bash
+sudo chef-solo -c solo.rb -j solo.json
+```  
+## 4. Interactive shell for exploring the Chef server API and testing recipes.
+```bash
+chef-shell
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #Chef-Commands
 #1 Runs the Chef client, which applies the configuration to the node.
 chef-client
