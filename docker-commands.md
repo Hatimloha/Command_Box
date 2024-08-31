@@ -1,5 +1,8 @@
-#1 check available images.  
+# 1 check available images.  
+
+```docker
 Docker images
+```
 
 #2  command is used to search for Docker images on Docker Hub or other container registries. It allows you to find images based on keywords or specific criteria, such as the image name, description, or official status.
 docker search <search image name>
