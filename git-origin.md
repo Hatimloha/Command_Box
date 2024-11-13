@@ -39,3 +39,23 @@ Finally, push your changes to the main branch on GitHub:
 ```bash
 git push origin main
 ```
+
+
+Example:
+```bash
+# Clone your repository
+git clone https://github.com/Hatimloha/Terraform-Learn.git
+cd Terraform-Learn
+
+# Add the remote for the other repository
+git remote add terraform-zero-to-hero https://github.com/iam-veeramalla/terraform-zero-to-hero.git
+
+# Fetch the contents
+git fetch terraform-zero-to-hero
+
+# Merge the content from the other repo's main branch
+git merge terraform-zero-to-hero/main
+
+# Push the changes
+git push origin main
+```
