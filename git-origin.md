@@ -32,3 +32,10 @@ Commit your staged changes with a meaningful message. For example:
 ```bash
 git commit -m "Save all the files"
 ```
+
+### 6. Push changes to the remote repository
+Finally, push your changes to the main branch on GitHub:
+
+```bash
+git push origin main
+```
